@@ -1,16 +1,28 @@
-import optionsStorage from './options-storage.js';
+// https://stackoverflow.com/a/61511955
+function waitForElement(selector) {
+	return new Promise(resolve => {
+		if (document.querySelector(selector)) {
+			resolve(document.querySelectorAll(selector));
+		}
 
-console.log('💈 Content script loaded for', chrome.runtime.getManifest().name);
-async function init() {
-	const options = await optionsStorage.getAll();
-	const color = 'rgb(' + options.colorRed + ', ' + options.colorGreen + ',' + options.colorBlue + ')';
-	const text = options.text;
-	const notice = document.createElement('div');
-	notice.innerHTML = text;
-	document.body.prepend(notice);
-	notice.id = 'text-notice';
-	notice.style.border = '2px solid ' + color;
-	notice.style.color = color;
+		const observer = new MutationObserver(_mutations => {
+			if (document.querySelector(selector)) {
+				resolve(document.querySelectorAll(selector));
+				observer.disconnect();
+			}
+		});
+
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true,
+		});
+	});
 }
 
-init();
+waitForElement('.jwplayer .jw-state-playing').then(elements => {
+	for (const video of elements) {
+		video.focus();
+		video.dispatchEvent(new KeyboardEvent('keydown', {code: "Space", keyCode: 32, which: 32}));
+		console.log('Pinkbike Video paused');
+	}
+});
