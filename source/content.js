@@ -22,7 +22,7 @@ function waitForElement(selector) {
 waitForElement('.jwplayer .jw-state-playing').then(elements => {
 	for (const video of elements) {
 		video.focus();
-		video.dispatchEvent(new KeyboardEvent('keydown', {code: "Space", keyCode: 32, which: 32}));
+		video.dispatchEvent(new KeyboardEvent('keydown', {code: 'Space', keyCode: 32, which: 32}));
 		console.log('Pinkbike Video paused');
 	}
 });
