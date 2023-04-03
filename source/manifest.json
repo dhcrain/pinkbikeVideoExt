@@ -1,8 +1,8 @@
 {
-	"name": "Awesome Extension",
-	"version": "0.0.0",
+	"name": "Pinkbike stop autoplay",
+	"version": "0.0.1",
 	"description": "An awesome new browser extension",
-	"homepage_url": "https://github.com/fregante/browser-extension-template",
+	"homepage_url": "https://github.com/dhcrain/pinkbikeVideoExt",
 	"manifest_version": 3,
 	"minimum_chrome_version": "100",
 	"browser_specific_settings": {
@@ -14,26 +14,14 @@
 	"icons": {
 		"128": "icon.png"
 	},
-	"permissions": [
-		"storage"
-	],
 	"host_permissions": [
-		"https://github.com/*"
+		"*://www.pinkbike.com/*"
 	],
 	"content_scripts": [
 		{
-			"matches": [ "https://github.com/fregante/browser-extension-template/*" ],
+			"matches": [ "*://www.pinkbike.com/*" ],
 			"js": [ "content.js" ],
-			"css": [ "content.css" ],
 			"run_at": "document_end"
 		}
-	],
-	"options_ui": {
-		"browser_style": true,
-		"page": "options.html"
-	},
-	"background": {
-		"service_worker": "background.js",
-		"type": "module"
-	}
+	]
 }

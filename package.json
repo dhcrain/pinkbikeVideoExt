@@ -4,7 +4,6 @@
 		"build": "parcel build source/manifest.json --no-content-hash --no-source-maps --dist-dir distribution --no-cache --detailed-report 0",
 		"lint": "run-p lint:*",
 		"lint-fix": "run-p 'lint:* -- --fix'",
-		"lint:css": "stylelint source/**/*.css",
 		"lint:js": "xo",
 		"test": "run-p lint:* build",
 		"watch": "parcel watch source/manifest.json --dist-dir distribution --no-cache --no-hmr"
@@ -38,12 +37,12 @@
 		"sourceDir": "distribution",
 		"run": {
 			"startUrl": [
-				"https://github.com/fregante/browser-extension-template"
+				"https://pinkbike.com"
 			]
 		}
 	},
- 	"@parcel/bundler-default-bug": "https://github.com/parcel-bundler/parcel/issues/8071",
- 	"@parcel/bundler-default": {
- 		"minBundles": 10000000
- 	}
+	"@parcel/bundler-default-bug": "https://github.com/parcel-bundler/parcel/issues/8071",
+	"@parcel/bundler-default": {
+		"minBundles": 10000000
+	}
 }
