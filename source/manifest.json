@@ -1,27 +1,24 @@
 {
 	"name": "Pinkbike stop autoplay",
 	"version": "0.0.1",
-	"description": "An awesome new browser extension",
+	"description": "Auto pause Pinkbike videos",
 	"homepage_url": "https://github.com/dhcrain/pinkbikeVideoExt",
 	"manifest_version": 3,
 	"minimum_chrome_version": "100",
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "awesome-extension@notlmn.github.io",
-			"strict_min_version": "100.0"
+			"id": "pinkbike-video-ext@dhcrain.github.io",
+			"strict_min_version": "109.0"
 		}
 	},
 	"icons": {
 		"128": "icon.png"
 	},
-	"host_permissions": [
-		"*://www.pinkbike.com/*"
-	],
+	"host_permissions": [ "*://*.pinkbike.com/*" ],
 	"content_scripts": [
 		{
-			"matches": [ "*://www.pinkbike.com/*" ],
-			"js": [ "content.js" ],
-			"run_at": "document_end"
+			"matches": [ "*://*.pinkbike.com/*" ],
+			"js": [ "content.js" ]
 		}
 	]
 }

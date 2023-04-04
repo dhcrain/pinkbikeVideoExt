@@ -72,7 +72,3 @@ Thanks to the included [GitHub Action Workflows](.github/workflows), if you set 
 
 - on a schedule, by default [every week](.github/workflows/release.yml) (but only if there are any new commits in the last tag)
 - manually, by clicking ["Run workflow"](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/) in the Actions tab.
-
-## Credits
-
-Extension icon made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0).
